@@ -1,6 +1,6 @@
 use std::{fs, env};
 
-
+#[derive(Debug)]
 struct Lexer {
     content: String,
 }
@@ -16,4 +16,8 @@ fn main() {
 
     let content = fs::read_to_string(file).unwrap();
     println!("{}", content);
+
+    let lexer = Lexer::new(content);
+
+    println!("{:?}", lexer)
 }
