@@ -2,7 +2,13 @@ use std::{fs, env};
 
 
 struct Lexer {
+    content: String,
+}
 
+impl Lexer {
+    pub fn new(content: String) -> Self {
+        return Self {content}
+    }
 }
 
 fn main() {
