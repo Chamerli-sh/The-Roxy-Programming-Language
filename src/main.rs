@@ -16,10 +16,10 @@ fn main() {
 
     let not_sure_content = fs::read_to_string(file);
 
-    let content = if (not_sure_content.is_ok()) {
+    let content = if not_sure_content.is_ok() {
         not_sure_content.unwrap()
     } else {
-        panic!("Could not read file :)).");
+        panic!("Could not read file :))");
     };
 
     println!("{}", content);
