@@ -12,7 +12,13 @@ impl Lexer {
 }
 
 fn main() {
-    let file = env::args().nth(1).unwrap();
+    let not_sure_file = env::args().nth(1);
+
+    let file = if not_sure_file.is_some() {
+        not_sure_file.unwrap()
+    } else {
+        panic!("File Not Found :))");
+    };
 
     let not_sure_content = fs::read_to_string(file);
 
