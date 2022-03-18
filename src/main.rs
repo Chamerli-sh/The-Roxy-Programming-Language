@@ -16,17 +16,23 @@ impl Lexer {
         }
     }
     pub fn lex(&mut self) {
-        let tokens: Vec<token::Token> = Vec::new();
+        let mut tokens: Vec<token::Token> = Vec::new();
 
         while self.source.len() > self.index {
             let c = self.current_char();
 
             match c {
-                _ => println!("{}", c),
+                '=' => {
+                    tokens.push(token::Token::new(token::TokenKind::Assign, "=".to_owned()));
+                    self.index += 1
+                },
+                _ => {
+                    self.index += 1
+                },
             }
 
-            self.index += 1
         }
+        println!("{:?}", tokens);
     }
     fn current_char(&self) -> char {
         *self.source.get(self.index).unwrap()
