@@ -3,11 +3,19 @@ use std::{fs, env};
 #[derive(Debug)]
 struct Lexer {
     content: String,
+
+    index: i128,
 }
 
 impl Lexer {
     pub fn new(content: String) -> Self {
-        return Self {content}
+        return Self {
+            content,
+            index: 0,
+        }
+    }
+    pub fn lex(&mut self) {
+        
     }
 }
 
@@ -28,9 +36,6 @@ fn main() {
         panic!("Could not read file :))");
     };
 
-    println!("{}", content);
-
     let lexer = Lexer::new(content);
-
-    println!("{:?}", lexer)
+    // lexer.lex();
 }
