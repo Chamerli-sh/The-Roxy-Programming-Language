@@ -5,7 +5,7 @@ pub mod token;
 struct Lexer {
     source: Vec<char>,
 
-    index: i128,
+    index: usize,
 }
 
 impl Lexer {
