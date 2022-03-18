@@ -2,7 +2,7 @@ use std::{fs, env};
 
 #[derive(Debug)]
 struct Lexer {
-    content: String,
+    source: Vec<char>,
 
     index: i128,
 }
@@ -10,7 +10,7 @@ struct Lexer {
 impl Lexer {
     pub fn new(content: String) -> Self {
         return Self {
-            content,
+            source: content.chars().collect(),
             index: 0,
         }
     }
