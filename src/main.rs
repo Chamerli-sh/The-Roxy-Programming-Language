@@ -50,6 +50,6 @@ fn main() {
         panic!("Could not read file :))");
     };
 
-    let lexer = Lexer::new(content);
+    let mut lexer = Lexer::new(content);
     lexer.lex();
 }
