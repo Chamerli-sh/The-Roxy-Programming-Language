@@ -19,8 +19,17 @@ impl Lexer {
         let tokens: Vec<token::Token> = Vec::new();
 
         while self.source.len() > self.index {
-            self.index += 1;
+            let c = self.current_char();
+
+            match c {
+                _ => println!("{}", c),
+            }
+
+            self.index += 1
         }
+    }
+    fn current_char(&self) -> char {
+        *self.source.get(self.index).unwrap()
     }
 }
 
@@ -42,5 +51,5 @@ fn main() {
     };
 
     let lexer = Lexer::new(content);
-    // lexer.lex();
+    lexer.lex();
 }
