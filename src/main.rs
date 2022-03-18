@@ -16,7 +16,11 @@ impl Lexer {
         }
     }
     pub fn lex(&mut self) {
-        
+        let tokens: Vec<token::Token> = Vec::new();
+
+        while self.source.len() > self.index {
+            self.index += 1;
+        }
     }
 }
 

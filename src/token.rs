@@ -1,11 +1,11 @@
-enum TokenKind {
+pub enum TokenKind {
     Identifier,
     Assign,
     Var,
     String  
 }
 
-struct Token {
+pub struct Token {
     kind: TokenKind, 
     literal: String,
 }
